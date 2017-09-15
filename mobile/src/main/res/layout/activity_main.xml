@@ -7,35 +7,55 @@
     android:layout_height="match_parent"
     tools:context="com.adapplus.adap.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/sendgood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Button"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintRight_toLeftOf="@+id/sendbad"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <Button
+        android:id="@+id/sendbad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintRight_toLeftOf="@+id/linearLayout"
+        app:layout_constraintLeft_toRightOf="@+id/sendgood"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="138dp"
         android:layout_height="495dp"
-        tools:context="com.adapplus.adap.MainActivity"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:context="com.adapplus.adap.MainActivity"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/sendbad"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp" />
+
         <Button
             android:id="@+id/actionButton"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
-            android:text="@string/app_name"
-            android:onClick="sendNotification" />
+            android:onClick="sendNotification"
+            android:text="@string/app_name" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

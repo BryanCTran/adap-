@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             toSend = "You sent an empty notification";
         Notification notification = new NotificationCompat.Builder(getApplication())
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("AndroidAuthority")
+                .setContentTitle("ADAP+")
                 .setContentText(toSend)
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .build();
