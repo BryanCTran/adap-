@@ -5,42 +5,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.adapplus.adap.MainActivity">
+    tools:context="com.adapplus.adap.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <Button
         android:id="@+id/sendgood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:onClick="goodjobnotify"
+        android:text="Positive"
         tools:ignore="MissingConstraints"
-        app:layout_constraintRight_toLeftOf="@+id/sendbad"
+        app:layout_constraintRight_toLeftOf="@+id/linearLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/sendbad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:onClick="badjobnotify"
+        android:text="Negative"
         tools:ignore="MissingConstraints"
-        app:layout_constraintRight_toLeftOf="@+id/linearLayout"
-        app:layout_constraintLeft_toRightOf="@+id/sendgood"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/linearLayout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="138dp"
-        android:layout_height="495dp"
+        android:layout_width="132dp"
+        android:layout_height="112dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:context="com.adapplus.adap.MainActivity"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:weightSum="1"
+        app:layout_constraintRight_toLeftOf="@+id/sendbad"
+        app:layout_constraintLeft_toRightOf="@+id/sendgood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6">
 
         <EditText
             android:id="@+id/editText"
@@ -55,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="sendNotification"
-            android:text="@string/app_name" />
+            android:text="Send Custom Message"
+            android:layout_weight="0.24" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
