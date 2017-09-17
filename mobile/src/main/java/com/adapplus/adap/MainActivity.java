@@ -8,11 +8,12 @@ import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.EditText;
 
+
 public class MainActivity extends AppCompatActivity {
     EditText editText;
 //Firsttrybelow
-   // NotificationCompat.Builder goodjob;
-   // private static final int uniqueID = 456654;
+    // NotificationCompat.Builder goodjob;
+    // private static final int uniqueID = 456654;
 
 
 
@@ -22,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         editText = (EditText) findViewById(R.id.editText);
 //Firsttry=previous method, look into this if change is needed https://www.youtube.com/watch?v=NgQzJ0s0XmM
-     //   goodjob = new NotificationCompat.Builder(this);
-       // goodjob.setAutoCancel(true);
+        //   goodjob = new NotificationCompat.Builder(this);
+        // goodjob.setAutoCancel(true);
 
     }
 
-  //  firsttry: public void goodjobnotify(View view){
+    //  firsttry: public void goodjobnotify(View view){
     //    goodjob.setSmallIcon(R.mipmap.ic_launcher);
-      //  goodjob.setTicker("Good Job!");
+    //  goodjob.setTicker("Good Job!");
 
 
     //}
@@ -41,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 .setContentTitle("ADAP+")
                 .setContentText("Good Job!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
+                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
+
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
         notificationManager.notify(notificationId, notification);
@@ -54,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 .setContentTitle("ADAP+")
                 .setContentText("Don't do that!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
+                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
@@ -70,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 .setContentTitle("ADAP+")
                 .setContentText(toSend)
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
+                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
