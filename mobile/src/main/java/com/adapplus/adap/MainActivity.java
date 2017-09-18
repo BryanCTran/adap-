@@ -110,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
     public void sendNotification(View view) {
         //Notification code for custom text
         String toSend = editText.getText().toString();
-        if(toSend.isEmpty())
-            toSend = "You sent an empty notification";
+        //if(toSend.isEmpty())
+          //  toSend = "You sent an empty notification";
         Notification notification = new NotificationCompat.Builder(getApplication())
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("ADAP+")
