@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText("Don't do that!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
+                .setVibrate(new long[]{100, 100, 100, 100, 100, 100, 100,100,100,100,100})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText(toSend)
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
+                .setVibrate(new long[]{50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
