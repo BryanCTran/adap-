@@ -66,4 +66,6 @@
             android:text="Send Custom Message"
             android:layout_weight="0.24" />
     </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>

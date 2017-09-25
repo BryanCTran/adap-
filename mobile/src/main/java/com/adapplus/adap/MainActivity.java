@@ -2,6 +2,7 @@ package com.adapplus.adap;
 
 import android.app.Notification;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private EditText editText;
     private Button actionButton;
+
 //Firsttrybelow
     // NotificationCompat.Builder goodjob;
     // private static final int uniqueID = 456654;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //Firsttry=previous method, look into this if change is needed https://www.youtube.com/watch?v=NgQzJ0s0XmM
         //   goodjob = new NotificationCompat.Builder(this);
         // goodjob.setAutoCancel(true);
+
 
     }
 
@@ -133,4 +136,6 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
+
+
 }
