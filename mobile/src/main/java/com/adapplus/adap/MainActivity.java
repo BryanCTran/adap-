@@ -2,7 +2,6 @@ package com.adapplus.adap;
 
 import android.app.Notification;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -76,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 //priority and notification code. Fix vibration
                 .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setSmallIcon(R.drawable.ic_stat_name)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
 
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText("Don't do that!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setSmallIcon(R.drawable.ic_stat_name2)
                 .setVibrate(new long[]{100, 100, 100, 100, 100, 100, 100,100,100,100,100})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
