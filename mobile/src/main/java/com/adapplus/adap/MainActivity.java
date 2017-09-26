@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentTitle("ADAP+")
                 .setContentText("Good Job!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
+                //priority and notification code. Fix vibration
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
