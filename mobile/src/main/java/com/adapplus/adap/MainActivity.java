@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.adapplus.adap.R.raw.silence;
+
 
 public class MainActivity extends AppCompatActivity {
     private EditText editText;
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 //priority and notification code. Fix vibration
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setSmallIcon(R.drawable.ic_stat_name)
+                .setSmallIcon(R.drawable.ic_stat_name) //simple smiley face
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
 
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText("Don't do that!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setSmallIcon(R.drawable.ic_stat_name2)
+                .setSmallIcon(R.drawable.ic_stat_name2) //simple angry face
                 .setVibrate(new long[]{100, 100, 100, 100, 100, 100, 100,100,100,100,100})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
