@@ -3,6 +3,7 @@ package com.adapplus.adap;
 import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,12 +15,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.wearable.Wearable;
+
 //import static com.adapplus.adap.R.raw.silence;
 
 
 public class MainActivity extends AppCompatActivity {
     private EditText editText;
     private Button actionButton;
+    private AudioManager myAudioManager;
+    AudioManager mode = null;
 
 //Firsttrybelow
     // NotificationCompat.Builder goodjob;
@@ -35,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         editText.addTextChangedListener(buttontextWatcher);
         actionButton.setEnabled(false);
+        mode = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+
+
+
+
+
 //Firsttry=previous method, look into this if change is needed https://www.youtube.com/watch?v=NgQzJ0s0XmM
         //   goodjob = new NotificationCompat.Builder(this);
         // goodjob.setAutoCancel(true);
@@ -78,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goodjobnotify(View view) {
-        //Notification code for positive reinforcement
+        //Notification code for positive
+        mode.setRingerMode(AudioManager.RINGER_MODE_SILENT);
         Notification notification = new NotificationCompat.Builder(getApplication())
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("ADAP+")
@@ -103,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void badjobnotify(View view) {
+        mode.setRingerMode(AudioManager.RINGER_MODE_SILENT);
         //Notification code for negative reinforcement
         Notification notification = new NotificationCompat.Builder(getApplication())
                 .setSmallIcon(R.mipmap.ic_launcher)
@@ -126,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendNotification(View view) {
+        mode.setRingerMode(AudioManager.RINGER_MODE_SILENT);
         //Notification code for custom text
         String toSend = editText.getText().toString();
         //if(toSend.isEmpty())
