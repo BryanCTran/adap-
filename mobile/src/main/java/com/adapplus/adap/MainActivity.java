@@ -16,11 +16,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.wearable.Wearable;
-
-//import static com.adapplus.adap.R.raw.silence;
-
 
 public class MainActivity extends AppCompatActivity {
     private EditText editText;
@@ -82,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
     //}
 
-    public void tutorial(View view){
-        Intent homeIntent = new Intent(MainActivity.this, Tutorial.class);
+    public void comtomain (View view){
+        Intent homeIntent = new Intent(MainActivity.this, MainMenu.class);
         startActivity(homeIntent);
         finish();
 
@@ -157,6 +152,9 @@ public class MainActivity extends AppCompatActivity {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
         notificationManager.notify(notificationId, notification);
+
+
+
         //Toast notification for message confirmation
         Context context = getApplicationContext();
         CharSequence text = "Message sent!";
@@ -165,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
+
 
 
 }
