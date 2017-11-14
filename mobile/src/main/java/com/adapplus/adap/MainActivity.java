@@ -15,6 +15,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button actionButton;
     private AudioManager myAudioManager;
     AudioManager mode = null;
+    ArrayList<String> commands;
 
 //Firsttrybelow
     // NotificationCompat.Builder goodjob;
@@ -38,14 +46,9 @@ public class MainActivity extends AppCompatActivity {
         editText.addTextChangedListener(buttontextWatcher);
         actionButton.setEnabled(false);
         mode = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+        commands = new ArrayList<String>();
 
 
-
-
-
-//Firsttry=previous method, look into this if change is needed https://www.youtube.com/watch?v=NgQzJ0s0XmM
-        //   goodjob = new NotificationCompat.Builder(this);
-        // goodjob.setAutoCancel(true);
 
 
     }
@@ -70,12 +73,6 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    //  firsttry: public void goodjobnotify(View view){
-    //    goodjob.setSmallIcon(R.mipmap.ic_launcher);
-    //  goodjob.setTicker("Good Job!");
-
-
-    //}
 
     public void comtomain (View view){
         Intent homeIntent = new Intent(MainActivity.this, MainMenu.class);
@@ -109,6 +106,27 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+        //Data Logging
+        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        String good = currentDateTimeString + " Good_Command";
+        commands.add(currentDateTimeString);
+        commands.add(good);
+        //for (int i = 0 ; i < commands.size() ; i++){
+        //    text = text + commands.get(i) + "" + "\n"
+       // }
+        try{
+            FileOutputStream file = openFileOutput("Data.txt", MODE_PRIVATE);
+            OutputStreamWriter outputFile = new OutputStreamWriter(file);
+
+            for (int i = 0 ; i < commands.size() ; i++){
+                outputFile.write(commands.get(i) + "\n");
+            }
+            outputFile.flush();
+            outputFile.close();
+        }
+        catch (IOException e){
+
+        }
     }
 
     public void badjobnotify(View view) {
@@ -133,6 +151,28 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+
+        //Data Logging
+        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        String bad = currentDateTimeString + " Bad_Command";
+        commands.add(currentDateTimeString);
+        commands.add(bad);
+        //for (int i = 0 ; i < commands.size() ; i++){
+        //    text = text + commands.get(i) + "" + "\n"
+        // }
+        try{
+            FileOutputStream file = openFileOutput("Data.txt", MODE_PRIVATE);
+            OutputStreamWriter outputFile = new OutputStreamWriter(file);
+
+            for (int i = 0 ; i < commands.size() ; i++){
+                outputFile.write(commands.get(i) + "\n");
+            }
+            outputFile.flush();
+            outputFile.close();
+        }
+        catch (IOException e){
+
+        }
     }
 
     public void sendNotification(View view) {
@@ -162,6 +202,28 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
+
+        //Data Logging
+        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        String custom = currentDateTimeString + " Custom_Command";
+        commands.add(currentDateTimeString);
+        commands.add(custom);
+        //for (int i = 0 ; i < commands.size() ; i++){
+        //    text = text + commands.get(i) + "" + "\n"
+        // }
+        try{
+            FileOutputStream file = openFileOutput("Data.txt", MODE_PRIVATE);
+            OutputStreamWriter outputFile = new OutputStreamWriter(file);
+
+            for (int i = 0 ; i < commands.size() ; i++){
+                outputFile.write(commands.get(i) + "\n");
+            }
+            outputFile.flush();
+            outputFile.close();
+        }
+        catch (IOException e){
+
+        }
     }
 
 

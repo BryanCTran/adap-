@@ -9,18 +9,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
 public class Tutorial extends AppCompatActivity {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-        VideoView vv = (VideoView)findViewById(R.id.vidview);
-        String path = Environment.getExternalStorageDirectory().getPath()+"/tut.mp4";
-        vv.setVideoPath(path);
-        vv.start();
+       // VideoView vv = (VideoView)findViewById(R.id.vidview);
+       // vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.tut));
+      //  MediaController mediaController = new MediaController(this);
+       // VideoView vv = (VideoView) findViewById(R.id.vidview);
+        //String path = Environment.getExternalStorageDirectory().getPath()+"/tut.mp4";
+       // vv.setVideoPath(path);
+       // vv.start();
     }
 
 
