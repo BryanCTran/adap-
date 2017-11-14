@@ -14,19 +14,18 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 public class Tutorial extends AppCompatActivity {
+    Button play;
+    VideoView vid;
+    MediaController med;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-       // VideoView vv = (VideoView)findViewById(R.id.vidview);
-       // vv.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.tut));
-      //  MediaController mediaController = new MediaController(this);
-       // VideoView vv = (VideoView) findViewById(R.id.vidview);
-        //String path = Environment.getExternalStorageDirectory().getPath()+"/tut.mp4";
-       // vv.setVideoPath(path);
-       // vv.start();
+        play = (Button) findViewById(R.id.button3);
+        vid = (VideoView) findViewById(R.id.vidview);
+        med = new MediaController(this);
     }
 
 
@@ -34,16 +33,14 @@ public class Tutorial extends AppCompatActivity {
         Intent homeIntent = new Intent(Tutorial.this, MainMenu.class);
         startActivity(homeIntent);
         finish();
-
     }
 
     public void playvid(View view){
-        Context context = getApplicationContext();
-        CharSequence text = "Nothing here yet!";
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
+        String vidpath = "android.resource://com.adapplus.adap/" + R.raw.tut;
+        Uri uri = Uri.parse(vidpath);
+        vid.setVideoURI(uri);
+        vid.setMediaController(med);
+        med.setAnchorView(vid);
+        vid.start();
     }
 }
