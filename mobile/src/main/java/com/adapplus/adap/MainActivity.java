@@ -25,16 +25,15 @@ import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
+    //declaring the editText for the custom command
     private EditText editText;
+    //declaring the Button for custom command
     private Button actionButton;
+    //declaring the audiomanager for silencing
     private AudioManager myAudioManager;
     AudioManager mode = null;
+    //declaring the arraylist for storing commands
     ArrayList<String> commands;
-
-//Firsttrybelow
-    // NotificationCompat.Builder goodjob;
-    // private static final int uniqueID = 456654;
-
 
 
     @Override
