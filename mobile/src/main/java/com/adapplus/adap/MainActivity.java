@@ -3,6 +3,7 @@ package com.adapplus.adap;
 import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
+import static android.R.attr.bitmap;
 
 public class MainActivity extends AppCompatActivity {
     //declaring the editText for the custom command
@@ -85,13 +86,13 @@ public class MainActivity extends AppCompatActivity {
         //Notification code for positive
         mode.setRingerMode(AudioManager.RINGER_MODE_SILENT);
         Notification notification = new NotificationCompat.Builder(getApplication())
-                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("ADAP+")
                 .setContentText("Good Job!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 //priority and notification code. Fix vibration
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setSmallIcon(R.drawable.ic_stat_name) //simple smiley face
+                .setSmallIcon(R.drawable.ic_stat_name)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.smile)) //smiling bitmap image
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
 
@@ -132,12 +133,12 @@ public class MainActivity extends AppCompatActivity {
         mode.setRingerMode(AudioManager.RINGER_MODE_SILENT);
         //Notification code for negative reinforcement
         Notification notification = new NotificationCompat.Builder(getApplication())
-                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("ADAP+")
                 .setContentText("Don't do that!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setSmallIcon(R.drawable.ic_stat_name2) //simple angry face
+                .setSmallIcon(R.drawable.ic_stat_name)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.frown)) //frowning bitmap image
                 .setVibrate(new long[]{100, 300, 100, 300, 100, 300, 100,300,100,300,100})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
