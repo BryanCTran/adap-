@@ -3,13 +3,8 @@ package com.adapplus.adap;
 import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.support.v4.app.NotificationManagerCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
@@ -27,8 +22,6 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import static android.R.attr.bitmap;
-import static android.R.attr.mipMap;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -53,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         actionButton.setEnabled(false);
         mode = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
         commands = new ArrayList<String>();
-
 
 
 
@@ -92,17 +84,14 @@ public class MainActivity extends AppCompatActivity {
     public void goodjobnotify(View view) {
         //Notification code for positive
         mode.setRingerMode(AudioManager.RINGER_MODE_SILENT);
-        Drawable drawable2= ContextCompat.getDrawable(this,R.drawable.smile);
-
-        Bitmap bitmap2 = ((BitmapDrawable)drawable2).getBitmap();
         Notification notification = new NotificationCompat.Builder(getApplication())
-                .setSmallIcon(R.drawable.common_google_signin_btn_icon_light)
-                .setLargeIcon(bitmap2)//large icon smiley
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("ADAP+")
                 .setContentText("Good Job!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 //priority and notification code. Fix vibration
                 .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setSmallIcon(R.drawable.ic_stat_name) //simple smiley face
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
 
@@ -142,20 +131,15 @@ public class MainActivity extends AppCompatActivity {
     public void badjobnotify(View view) {
         mode.setRingerMode(AudioManager.RINGER_MODE_SILENT);
         //Notification code for negative reinforcement
-        Drawable drawable= ContextCompat.getDrawable(this,R.drawable.frown);
-
-        Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
-
         Notification notification = new NotificationCompat.Builder(getApplication())
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("ADAP+")
                 .setContentText("Don't do that!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setSmallIcon(R.drawable.common_google_signin_btn_icon_light)
-                .setLargeIcon(bitmap)
+                .setSmallIcon(R.drawable.ic_stat_name2) //simple angry face
                 .setVibrate(new long[]{100, 100, 100, 100, 100, 100, 100,100,100,100,100})
                 .build();
-
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
         notificationManager.notify(notificationId, notification);
