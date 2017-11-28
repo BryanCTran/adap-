@@ -3,7 +3,6 @@ package com.adapplus.adap;
 import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +22,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import static android.R.attr.bitmap;
+
 
 public class MainActivity extends AppCompatActivity {
     //declaring the editText for the custom command
@@ -93,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 //priority and notification code. Fix vibration
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setSmallIcon(R.drawable.ic_stat_name) //simple smiley face
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.smile))
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000})
                 .build();
 
@@ -139,9 +137,8 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText("Don't do that!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setSmallIcon(R.drawable.ic_stat_name)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.frown))
-                .setVibrate(new long[]{100, 100, 100, 100, 100, 100, 100,100,100,100,100})
+                .setSmallIcon(R.drawable.ic_stat_name2) //simple angry face
+                .setVibrate(new long[]{100, 300, 100, 300, 100, 300, 100,300,100,300,100})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
@@ -189,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText(toSend)
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setVibrate(new long[]{50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50})
+                .setVibrate(new long[]{100, 300, 100, 500, 100, 300, 100, 500, 100, 300, 100, 500, 100, 300, 100, 500, 100})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
