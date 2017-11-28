@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setSmallIcon(R.drawable.ic_stat_name2) //simple angry face
-                .setVibrate(new long[]{100, 100, 100, 100, 100, 100, 100,100,100,100,100})
+                .setVibrate(new long[]{100, 300, 100, 300, 100, 300, 100,300,100,300,100})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText(toSend)
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setVibrate(new long[]{50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50})
+                .setVibrate(new long[]{100, 300, 100, 500, 100, 300, 100, 500, 100, 300, 100, 500, 100, 300, 100, 500, 100})
                 .build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplication());
         int notificationId = 1;
