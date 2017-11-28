@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import static android.R.attr.bitmap;
+import static android.R.attr.mipMap;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -95,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
         Bitmap bitmap2 = ((BitmapDrawable)drawable2).getBitmap();
         Notification notification = new NotificationCompat.Builder(getApplication())
-                .setSmallIcon(android.R.drawable.screen_background_light_transparent)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.smile))//large icon smiley
+                .setSmallIcon(R.drawable.common_google_signin_btn_icon_light)
+                .setLargeIcon(bitmap2)//large icon smiley
                 .setContentTitle("ADAP+")
                 .setContentText("Good Job!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
@@ -150,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentText("Don't do that!")
                 .extend(new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setSmallIcon(android.R.drawable.screen_background_light_transparent)
+                .setSmallIcon(R.drawable.common_google_signin_btn_icon_light)
                 .setLargeIcon(bitmap)
                 .setVibrate(new long[]{100, 100, 100, 100, 100, 100, 100,100,100,100,100})
                 .build();
