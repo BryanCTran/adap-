@@ -1,11 +1,13 @@
 package com.adapplus.adap;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
     Spinner viblist;
@@ -38,6 +40,42 @@ public class Settings extends AppCompatActivity {
         viblistneg.setAdapter(adapterviblistneg);
 
 
+    }
+
+    public void posmesclick(View view){
+        Context context = getApplicationContext();
+        CharSequence text = "Default Message Saved!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
+    public void negmesclick(View view){
+        Context context = getApplicationContext();
+        CharSequence text = "Default Message Saved!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
+    public void posvibclick(View view){
+        Context context = getApplicationContext();
+        CharSequence text = "Default Vibration Saved!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
+    public void negvibclick(View view){
+        Context context = getApplicationContext();
+        CharSequence text = "Default Vibration Saved!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
     public void settomain(View view){
