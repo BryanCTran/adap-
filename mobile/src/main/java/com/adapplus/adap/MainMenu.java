@@ -12,25 +12,25 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
     }
-
+    //this code brings the user to the tutorial section
     public void maintotut(View view){
         Intent homeIntent = new Intent(MainMenu.this, Tutorial.class);
         startActivity(homeIntent);
         finish();
     }
-
+    //this code brings the user to the commands section
     public void maintocom(View view){
         Intent homeIntent = new Intent(MainMenu.this, MainActivity.class);
         startActivity(homeIntent);
         finish();
     }
-
+    //this code brings the user to the data logging section
     public void maintodata(View view){
         Intent homeIntent = new Intent(MainMenu.this, DataLog.class);
         startActivity(homeIntent);
         finish();
     }
-
+    //this code brings the user to the settings section
     public void maintoset(View view){
         Intent homeIntent = new Intent(MainMenu.this, Settings.class);
         startActivity(homeIntent);
